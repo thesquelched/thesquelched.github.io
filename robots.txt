@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: 
+
+Sitemap: http://thesquelched.github.io/sitemap.xml 
