@@ -2,10 +2,10 @@
 #      Main Configs       #
 # ----------------------- #
 
-url: http://yoursite.com
-title: My Octopress Blog
-subtitle: A blogging framework for hackers.
-author: Your Name
+url: http://thesquelched.github.io
+title: Watch Out for Scott
+subtitle: He's a Dick
+author: Scott
 simple_search: https://www.google.com/search
 description:
 
@@ -63,7 +63,7 @@ default_asides: [asides/recent_posts.html, asides/github.html, asides/delicious.
 # ----------------------- #
 
 # Github repositories
-github_user:
+github_user: thesquelched
 github_repo_count: 0
 github_show_profile_link: true
 github_skip_forks: true
