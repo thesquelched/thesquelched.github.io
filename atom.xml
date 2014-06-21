@@ -1,16 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[My Octopress Blog]]></title>
+  <title><![CDATA[Watch Out for Scott]]></title>
   <link href="http://thesquelched.github.io/atom.xml" rel="self"/>
   <link href="http://thesquelched.github.io/"/>
-  <updated>2014-06-21T12:54:02-05:00</updated>
+  <updated>2014-06-21T15:14:25-05:00</updated>
   <id>http://thesquelched.github.io/</id>
   <author>
-    <name><![CDATA[Your Name]]></name>
+    <name><![CDATA[Scott]]></name>
     
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[New Blog, Sucka]]></title>
+    <link href="http://thesquelched.github.io/blog/2014/06/21/new-blog/"/>
+    <updated>2014-06-21T13:08:33-05:00</updated>
+    <id>http://thesquelched.github.io/blog/2014/06/21/new-blog</id>
+    <content type="html"><![CDATA[<p>Administrating your own server (or VPS, as it were) is hard, thankless work, and more than a little pointless, given the alternatives.  Sure, you can roll my own email server, but if you don&rsquo;t want to get bounced by Gmail or whatever, you&rsquo;ve got to worry about DKIM keys, SPF records, etc., and even then, there&rsquo;s no guarantee that Google won&rsquo;t give you the finger, just to be safe.  And even if you get outgoing mail right, you better get spam protection right, or between every chain mail from your mom, you&rsquo;ll 10,000 <em>slightly</em> more annoying emails about Dr. Oz&rsquo;s new diet that makes your penis bigger using bitcoin, or whatever.</p>
+
+<p>Then, there&rsquo;s running your own blog.  I used Wordpress on my VPS, because <strong>of course</strong> I need 45,000 available plugins, a MySQL database, and a huge, neon &ldquo;please hack me&rdquo; sign to make dick jokes.  But hey, at least I had a plugin to show <a href="http://www.last.fm/user/thesquelched">my recent scrobbles</a>, right?  And I only had to pay $14 a month for the pleasure!  (All joking aside, <a href="http://serveraxis.com/vps.php">ServerAxis&rsquo;s metered VPS</a> are great.)</p>
+
+<p>Last week, I was looking at $168/year for my blog (to which I rarely post) and my email (filled to the brim with spam), plus the associated cost in time to maintain each.  Now, I&rsquo;m spending $40/year on a <a href="https://www.fastmail.fm/signup/personal.html">FastMail Enhanced Account</a> with:</p>
+
+<ul>
+<li>Baller spam protection</li>
+<li>Custom domain</li>
+<li>Two-factor authentication</li>
+<li>A webmail interface that blows SquirrelMail out of the water</li>
+</ul>
+
+
+<p>Then, as you might gather from the title of this post, I switched to a static <a href="https://pages.github.com/">GitHub blog</a> using <a href="http://octopress.org/">Octopress</a>, which presumably should scale better than a single, low-tier VPS server (not that I&rsquo;ll need that particular feature).  Plus, if I need to roll out another web app, <a href="https://github.com/thesquelched/first_birthday">like the one I built to track invitations for my daughter&rsquo;s first birthday party</a>, there&rsquo;s always Heroku.</p>
+
+<p>That&rsquo;s a savings of $128/year for better products and fewer headaches (or <a href="http://heartbleed.com/">heartaches</a>.  Sounds like a good deal to me.</p>
+]]></content>
+  </entry>
   
 </feed>

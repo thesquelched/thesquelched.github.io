@@ -1,15 +1,51 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
+        <loc>http://thesquelched.github.io/blog/2014/06/21/new-blog/</loc>
+        <lastmod>2014-06-21T14:53:04-05:00</lastmod>
+    </url>
+    <url>
         <loc>http://thesquelched.github.io/</loc>
-        <lastmod>2014-06-18T22:30:18-05:00</lastmod>
+        <lastmod>2014-06-21T14:53:04-05:00</lastmod>
     </url>
     <url>
         <loc>http://thesquelched.github.io/blog/archives/</loc>
-        <lastmod>2014-06-18T22:30:18-05:00</lastmod>
+        <lastmod>2014-06-21T14:53:04-05:00</lastmod>
     </url>
     <url>
         <loc>http://thesquelched.github.io/robots.txt</loc>
-        <lastmod>2014-06-18T22:30:18-05:00</lastmod>
+        <lastmod>2014-06-21T14:53:04-05:00</lastmod>
+    </url>
+    <url>
+        <loc>http://thesquelched.github.io/assets/bootstrap/docs/components.html</loc>
+        <lastmod>2014-06-21T14:53:04-05:00</lastmod>
+    </url>
+    <url>
+        <loc>http://thesquelched.github.io/assets/bootstrap/docs/</loc>
+        <lastmod>2014-06-21T14:50:50-05:00</lastmod>
+    </url>
+    <url>
+        <loc>http://thesquelched.github.io/assets/bootstrap/docs/javascript.html</loc>
+        <lastmod>2014-06-21T14:53:04-05:00</lastmod>
+    </url>
+    <url>
+        <loc>http://thesquelched.github.io/assets/bootstrap/docs/css.html</loc>
+        <lastmod>2014-06-21T14:53:04-05:00</lastmod>
+    </url>
+    <url>
+        <loc>http://thesquelched.github.io/assets/bootstrap/docs/about.html</loc>
+        <lastmod>2014-06-21T14:53:04-05:00</lastmod>
+    </url>
+    <url>
+        <loc>http://thesquelched.github.io/assets/bootstrap/docs/getting-started.html</loc>
+        <lastmod>2014-06-21T14:53:04-05:00</lastmod>
+    </url>
+    <url>
+        <loc>http://thesquelched.github.io/assets/bootstrap/docs/migration.html</loc>
+        <lastmod>2014-06-21T14:53:04-05:00</lastmod>
+    </url>
+    <url>
+        <loc>http://thesquelched.github.io/assets/bootstrap/docs/customize.html</loc>
+        <lastmod>2014-06-21T14:53:04-05:00</lastmod>
     </url>
 </urlset>

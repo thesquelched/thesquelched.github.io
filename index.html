@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>My Octopress Blog</title>
-  <meta name="author" content="Your Name">
+  <title>Watch Out for Scott</title>
+  <meta name="author" content="Scott">
 
   
-  <meta name="description" content=" Blog Archives Recent Posts ">
+  <meta name="description" content="Administrating your own server (or VPS, as it were) is hard, thankless work, and more than a little pointless, given the alternatives. Sure, you can &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -21,7 +21,7 @@
   <link rel="canonical" href="http://thesquelched.github.io">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-  <link href="/atom.xml" rel="alternate" title="My Octopress Blog" type="application/atom+xml">
+  <link href="/atom.xml" rel="alternate" title="Watch Out for Scott" type="application/atom+xml">
   <script src="/javascripts/modernizr-2.0.js"></script>
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
@@ -36,9 +36,9 @@
 
 <body   >
   <header role="banner"><hgroup>
-  <h1><a href="/">My Octopress Blog</a></h1>
+  <h1><a href="/">Watch Out for Scott</a></h1>
   
-    <h2>A blogging framework for hackers.</h2>
+    <h2>He's a Dick</h2>
   
 </hgroup>
 
@@ -66,6 +66,58 @@
       <div class="blog-index">
   
   
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/06/21/new-blog/">New Blog, Sucka</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-06-21T13:08:33-05:00" pubdate data-updated="true">Jun 21<span>st</span>, 2014</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Administrating your own server (or VPS, as it were) is hard, thankless work, and more than a little pointless, given the alternatives.  Sure, you can roll my own email server, but if you don&rsquo;t want to get bounced by Gmail or whatever, you&rsquo;ve got to worry about DKIM keys, SPF records, etc., and even then, there&rsquo;s no guarantee that Google won&rsquo;t give you the finger, just to be safe.  And even if you get outgoing mail right, you better get spam protection right, or between every chain mail from your mom, you&rsquo;ll 10,000 <em>slightly</em> more annoying emails about Dr. Oz&rsquo;s new diet that makes your penis bigger using bitcoin, or whatever.</p>
+
+<p>Then, there&rsquo;s running your own blog.  I used Wordpress on my VPS, because <strong>of course</strong> I need 45,000 available plugins, a MySQL database, and a huge, neon &ldquo;please hack me&rdquo; sign to make dick jokes.  But hey, at least I had a plugin to show <a href="http://www.last.fm/user/thesquelched">my recent scrobbles</a>, right?  And I only had to pay $14 a month for the pleasure!  (All joking aside, <a href="http://serveraxis.com/vps.php">ServerAxis&rsquo;s metered VPS</a> are great.)</p>
+
+<p>Last week, I was looking at $168/year for my blog (to which I rarely post) and my email (filled to the brim with spam), plus the associated cost in time to maintain each.  Now, I&rsquo;m spending $40/year on a <a href="https://www.fastmail.fm/signup/personal.html">FastMail Enhanced Account</a> with:</p>
+
+<ul>
+<li>Baller spam protection</li>
+<li>Custom domain</li>
+<li>Two-factor authentication</li>
+<li>A webmail interface that blows SquirrelMail out of the water</li>
+</ul>
+
+
+<p>Then, as you might gather from the title of this post, I switched to a static <a href="https://pages.github.com/">GitHub blog</a> using <a href="http://octopress.org/">Octopress</a>, which presumably should scale better than a single, low-tier VPS server (not that I&rsquo;ll need that particular feature).  Plus, if I need to roll out another web app, <a href="https://github.com/thesquelched/first_birthday">like the one I built to track invitations for my daughter&rsquo;s first birthday party</a>, there&rsquo;s always Heroku.</p>
+
+<p>That&rsquo;s a savings of $128/year for better products and fewer headaches (or <a href="http://heartbleed.com/">heartaches</a>.  Sounds like a good deal to me.</p>
+</div>
+  
+  
+
+
+    </article>
+  
   <div class="pagination">
     
     <a href="/blog/archives">Blog Archives</a>
@@ -78,7 +130,40 @@
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
     
+      <li class="post">
+        <a href="/blog/2014/06/21/new-blog/">New Blog, Sucka</a>
+      </li>
+    
   </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating&#8230;</li>
+  </ul>
+  
+  <a href="https://github.com/thesquelched">@thesquelched</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'thesquelched',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
 </section>
 
 
@@ -91,7 +176,7 @@
     </div>
   </div>
   <footer role="contentinfo"><p>
-  Copyright &copy; 2014 - Your Name -
+  Copyright &copy; 2014 - Scott -
   <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
 </p>
 
