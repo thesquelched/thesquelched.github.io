@@ -1,0 +1,21 @@
+---
+layout: post
+title: "New Blog, Sucka"
+date: 2014-06-21 13:08:33 -0500
+comments: true
+categories: 
+---
+Administrating your own server (or VPS, as it were) is hard, thankless work, and more than a little pointless, given the alternatives.  Sure, you can roll my own email server, but if you don't want to get bounced by Gmail or whatever, you've got to worry about DKIM keys, SPF records, etc., and even then, there's no guarantee that Google won't give you the finger, just to be safe.  And even if you get outgoing mail right, you better get spam protection right, or between every chain mail from your mom, you'll 10,000 *slightly* more annoying emails about Dr. Oz's new diet that makes your penis bigger using bitcoin, or whatever.
+
+Then, there's running your own blog.  I used Wordpress on my VPS, because **of course** I need 45,000 available plugins, a MySQL database, and a huge, neon "please hack me" sign to make dick jokes.  But hey, at least I had a plugin to show [my recent scrobbles](http://www.last.fm/user/thesquelched), right?  And I only had to pay $14 a month for the pleasure!  (All joking aside, [ServerAxis's metered VPS](http://serveraxis.com/vps.php) are great.)
+
+Last week, I was looking at $168/year for my blog (to which I rarely post) and my email (filled to the brim with spam), plus the associated cost in time to maintain each.  Now, I'm spending $40/year on a [FastMail Enhanced Account](https://www.fastmail.fm/signup/personal.html) with:
+
+- Baller spam protection
+- Custom domain
+- Two-factor authentication
+- A webmail interface that blows SquirrelMail out of the water
+
+Then, as you might gather from the title of this post, I switched to a static [GitHub blog](https://pages.github.com/) using [Octopress](http://octopress.org/), which presumably should scale better than a single, low-tier VPS server (not that I'll need that particular feature).  Plus, if I need to roll out another web app, [like the one I built to track invitations for my daughter's first birthday party](https://github.com/thesquelched/first_birthday), there's always Heroku.
+
+That's a savings of $128/year for better products and fewer headaches (or [heartaches](http://heartbleed.com/).  Sounds like a good deal to me.
