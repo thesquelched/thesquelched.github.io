@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Pentadactyl, | Watch Out for Scott]]></title>
+  <link href="http://thesquelched.github.io/blog/categories/pentadactyl/atom.xml" rel="self"/>
+  <link href="http://thesquelched.github.io/"/>
+  <updated>2014-07-07T13:30:09-05:00</updated>
+  <id>http://thesquelched.github.io/</id>
+  <author>
+    <name><![CDATA[Scott]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Easier Two-Factor Authentication in FastMail With Pentadactyl]]></title>
+    <link href="http://thesquelched.github.io/blog/2014/07/07/easier-two-factor-authentication-in-fastmail-with-pentadactyl/"/>
+    <updated>2014-07-07T11:41:59-05:00</updated>
+    <id>http://thesquelched.github.io/blog/2014/07/07/easier-two-factor-authentication-in-fastmail-with-pentadactyl</id>
+    <content type="html"><![CDATA[<p>I switched to <a href="https://www.fastmail.fm">FastMail</a> last month, and so far it&rsquo;s pretty
+great (aside from my bayes spam filter not quite working optimally yet).
+One of the selling points was that FastMail supports multiple two-factor
+authentication providers, including Google Authenticator, which is a must
+security-conscious folk like myself.  However, the login process is somewhat
+annoying.  The login page looks like this:</p>
+
+<p><img src="http://i.imgur.com/3x7mUT6.png" alt="FastMail Login Screen" /></p>
+
+<p>In order to use two-factor authentication, you need to click the &ldquo;More&rdquo; link,
+which reveals the two-factor auth code input.  This feels unnecessary, and it&rsquo;s
+particularly annoying to me, a <a href="http://5digits.org/pentadactyl/">Pentadactyl</a>
+user, as I have to either grab the mouse and click on the link, or I have to
+exit insert mode, search for the &ldquo;More&rdquo; link, hit enter, and then re-enter
+insert mode to input the two-factor code.  Also, unlike Gmail, there&rsquo;s no
+option to allow an authenticated computer to skip the two-factor auth step in
+the future.</p>
+
+<p>FastMail <a href="https://www.fastmail.fm/help/account/2fa.html">openly admits that the process is a pain</a>,
+and that they intend to streamline it at some point in the future, but damnit,
+I demand satisfaction <em>now</em>.  While there&rsquo;s nothing I can do about the latter
+issue, I sure as hell can take care of the former.  Pentadactyl allows you
+<a href="http://5digits.org/help/map.xhtml#:command">create custom Javascript commands</a>,
+which you can run automatically using
+<a href="http://5digits.org/help/autocommands.xhtml">autocommands</a>.  Using these two
+features, I should be able to write a command to locate and click the &ldquo;More&rdquo;
+link (which is actually a <code>&lt;span&gt;</code> element), which I can then call
+automatically on page load with an autocommand.</p>
+
+<p>Let&rsquo;s try the simplest possible approach: get the DOM element corresponding to the link, then call its <code>click</code> method.  This goes in your <code>$HOME/.pentadactylrc</code> file:</p>
+
+<p>```
+command! fastmail-twofactor -description &ldquo;Show FastMail two-factor auth window&rdquo; -javascript</p>
+
+<pre><code>\ content.document.querySelector('div.content #problem span').click();
+</code></pre>
+
+<p>autocmd DOMLoad www.fastmail.fm :fastmail-twofactor
+```</p>
+
+<p>Note that, in order to access <code>document</code>, which would ordinarily be a global
+variable, you need to use the <code>content</code> object provided by Pentadactyl.  You
+can then reload the configuration using the <code>:rehash</code> or <code>:reh</code> command.
+However, upon reloading the page, the dialog is still collapsed.  Manually
+running the <code>:fastmail-twofactor</code> command works, though, so there must be a
+problem with the autocommand.  The <code>DOMLoad</code> event fires when the page loads,
+so the command should work as long as the &ldquo;More&rdquo; link is present on load;  one
+way this could fail is if some content is added to the page asynchronously
+after the DOM loads.  You can confirm this using the Firefox debugger.  It
+turns out that <code>homepage.js</code> is loaded on the page; setting a breakpoint at the
+beginning and stepping through the execution reveals that the page loads
+without the login window, one to load and display it shortly afterward.</p>
+
+<p>Unfortunately, there&rsquo;s no Pentadactyl event for loading individual objects on
+the page, so we&rsquo;ll have to look for a pure Javascript solution.  DOM3, which has been supported by major browsers for a while now, provides the
+<a href="https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver">MutationObserver object</a>,
+which allows you to observe changes in the DOM.  We should be able to use this
+to detect when the &ldquo;More&rdquo; link is added, after which we can trigger the click
+event.  However, just to be safe, we should check if the link already exists
+beforehand.</p>
+
+<p>```
+command! fastmail-twofactor -description &ldquo;Show FastMail two-factor auth window&rdquo; -javascript</p>
+
+<pre><code>\ var problem = content.document.querySelector('div.content #problem');
+\ 
+\ var more_link = problem.querySelector('span');
+\ if (more_link != null) {
+\   more_link.click();
+\   return;
+\ }
+\
+\ var obs = new MutationObserver(function(mutations) {
+\   mutations.forEach(function(mutation) {
+\     for (var i = 0; i &lt; mutation.addedNodes.length; i++) {
+\       var node = mutation.addedNodes.item(i);
+\       if (node.tagName.toLowerCase() === 'span') {
+\         node.click();
+\         obs.disconnect();
+\       }
+\     };
+\   });
+\ });
+\
+\ obs.observe(problem, {childList: true});
+</code></pre>
+
+<p>autocmd DOMLoad www.fastmail.fm :fastmail-twofactor
+```</p>
+
+<p>Voila!  The login window now automatically expands when you enter the page.</p>
+]]></content>
+  </entry>
+  
+</feed>
