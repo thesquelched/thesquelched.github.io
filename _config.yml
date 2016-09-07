@@ -1,0 +1,49 @@
+
+# SEO settings
+title: "Watch out for Scott"
+title2: ", he's a dick" # default: ""
+description: "Musings of Scott, a dick"
+url: http://www.chojin.org
+baseurl: null
+
+repo: http://github.com/thesquelched/thesquelched.github.io
+disqus_shortname: chojin-org
+comments: true
+
+# Build settings
+permalink   : /:year/:title/
+markdown    : kramdown
+highlighter : rouge
+
+source: ./
+destination: ./_site
+
+# Sass configuration
+sass:
+  sass_dir: assets/scss
+  style: compressed # expanded
+
+# Author settings
+author:
+  name     : "Scott Kruger"
+  bio      : "Scott is a software developer, and a dick."
+  email    : scott@chojin.org
+  url      : http://www.chojin.org
+  github   : http://github.com/thesquelched
+  resume   : https://www.dropbox.com/s/1kjdtlsrfhbsmsu/resume.pdf?dl=0
+
+# social settings
+og_locale: "en_US"
+
+gems:
+  - bourbon
+  - jekyll-paginate
+
+# navbar pages
+navbar:
+  - slug : about
+    title: About
+  - slug : blog
+    title: Blog
+
+exclude: ["gulp", "node_modules", "bower", "bower_components", "config.rb", "src", "Gemfile", "Gemfile.lock", ".rvmrc", ".rbenv-version", "package.json", "gulpfile.js", "README.md", "Rakefile", "changelog.md"]
