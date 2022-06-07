@@ -1,6 +1,6 @@
-# frozen_string_literal: true
-
-source "https://rubygems.org"
+# If you have OpenSSL installed, we recommend updating
+# the following line to use "https"
+source 'http://rubygems.org'
 
 group :development do
   gem 'html-proofer'
@@ -10,5 +10,3 @@ group :development do
   gem 'bourbon', '~> 4.2', '>= 4.2.6'
   gem 'pygments.rb', '~> 0.6.3'
 end
-
-# gem "rails"
