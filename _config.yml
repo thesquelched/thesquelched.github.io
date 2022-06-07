@@ -1,8 +1,7 @@
 
 # SEO settings
 title: "Watch out for Scott"
-title2: ", he's a dick" # default: ""
-description: "Musings of Scott, a dick"
+description: "Musings of Scott"
 url: http://www.chojin.org
 baseurl: null
 
@@ -26,7 +25,7 @@ sass:
 # Author settings
 author:
   name     : "Scott Kruger"
-  bio      : "Scott is a software developer, and a dick."
+  bio      : "Scott is a software developer"
   email    : scott@chojin.org
   url      : http://www.chojin.org
   github   : http://github.com/thesquelched

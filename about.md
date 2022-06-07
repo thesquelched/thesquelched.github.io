@@ -4,7 +4,7 @@ title: About
 permalink: /about/
 ---
 
-Scott is a software developer, and a dick.
+Scott is a senior software engineer.
 
 <iframe width="420" height="315" src="http://www.youtube.com/embed/E7HegNSoWs4" frameborder="0" allowfullscreen></iframe>
 
